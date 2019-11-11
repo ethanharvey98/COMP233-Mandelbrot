@@ -11,11 +11,11 @@
 using namespace std;
 
 // Width and height of image
-float width = 3000;
-float height = 3000;
+float width = 1000;
+float height = 1000;
 
 // Number of iterations
-int ITERATIONS = 300;
+int ITERATIONS = 100;
 
 // Function returns number of iterations or 0 if the pixel is a Mandelbrot point
 int value(int x, int y) {
