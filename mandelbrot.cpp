@@ -11,11 +11,11 @@
 using namespace std;
 
 // Width and height of image
-float width = 1000;
-float height = 1000;
+const int width = 1000;
+const int height = 1000;
 
 // Number of iterations
-int ITERATIONS = 100;
+const int ITERATIONS = 100;
 
 // Function returns number of iterations or 0 if the pixel is a Mandelbrot point
 int value(int x, int y) {
@@ -71,8 +71,7 @@ int main() {
 	// Set number of threads
 	omp_set_num_threads(4);
 
-#pragma omp for
-	{
+#pragma omp parallel for 
 		for (int row = 0; row < height; row++) {
 			for (int col = 0; col < width; col++) {
 
@@ -84,7 +83,6 @@ int main() {
 
 			}
 		}
-	}
 
 	// Fill histogram values
 	histogram[0] = count[0];
